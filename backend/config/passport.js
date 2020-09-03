@@ -7,7 +7,7 @@ const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const mongoose = require('mongoose');
 // const passport = require('passport')
-const User = mongoose.model('User');
+//const User = mongoose.model('User');
 const db = require('../models')
 
 // options is an object literal containing options to control
@@ -22,7 +22,7 @@ options.secretOrKey = process.env.JWT_SECRET;
 
 module.exports = (passport) => {
     passport.use(new JwtStrategy(options, (jwt_payload, done) => {
-        User.findByid(jwt_payload.id)
+        db.User.findByid(jwt_payload.id)
         // jwt_payload is an object literal containing the decoded JWT payload
         // done is a passport callback that has error first as an argument done(error, user, info)
         .then(user => {
