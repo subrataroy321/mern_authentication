@@ -3,7 +3,7 @@ import React from 'react';
 const Welcome = () => {
     return(
         <div>
-
+            <h1> Welcome to MERN Authtication </h1>
         </div>
     )
 }
