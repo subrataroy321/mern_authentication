@@ -12,11 +12,11 @@ const db = mongoose.connection;
 
 
 db.once('open', () => {
-    console.log(`Connected to MongoDB ${d.host}:${db.port}`)
+    console.log(`Connected to MongoDB ${db.host}:${db.port}`)
 })
 
 db.on('error', error => {
     console.log(`Database error\n${error}`)
 })
 
-module.exports.User = require('./User.js')
+module.exports.User = require('./User')
