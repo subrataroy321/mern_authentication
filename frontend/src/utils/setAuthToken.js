@@ -1,4 +1,4 @@
-import React from 'react'
+
 import axios from 'axios';
 
 // This utility will add the authorised user's JWT to request header
