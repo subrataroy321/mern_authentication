@@ -15,19 +15,6 @@ router.get('/test', (req,res)=> {
     res.json({ message: 'User endpoint OK'})
 })
 
-// GET api/users/ route
-router.get('/', (req,res)=> {
-    db.User.find()
-    .then(users => {
-        res.status(200).send(users);
-    })
-    .catch(err => {
-        console.log('Error while finding all user ',err)
-        res.status(503).send({message: 'Server Error'})
-        
-    })
-})
-
 // POST api/users/register (Public)
 router.post('/register', (req, res) => {
   
