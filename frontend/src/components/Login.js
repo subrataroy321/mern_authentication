@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from '../utils/setAuthToken';
@@ -32,7 +32,7 @@ const Login = (props) => {
             // Decode token to get the user data
             const decoded = jwt_decode(token);
             // set current user
-            props.setCurrentUser(decoded);
+            props.nowCurrentUser(decoded);
         })
         .catch(error=> console.log('Login error', error))
     }
